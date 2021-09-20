@@ -34,8 +34,9 @@ a {
 /*---Mobile version --*/
 /*font-family: 'Open Sans', sans-serif;
 font-family: 'Poppins', sans-serif;*/
+
 body {
-  background-color: var(--color-pale-cyant);
+  background-color: var(--color-background);
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   max-width: 1440px;
@@ -56,6 +57,7 @@ body {
   margin-top: 27px;
   margin-right: 16px;
   margin-left: 16px;
+  height: 48px;
 }
 .header__logo {
   width: 104px;
@@ -72,6 +74,9 @@ body {
   padding: 4px 22px 6px 23px;
   line-height: 14px;
   color: var(--color-dark-cyant);
+}
+.header__button a:hover {
+  background-color: #e4b7e5;
 }
 img {
   max-width: 100%;
@@ -176,10 +181,12 @@ h1 {
   font-style: normal;
   font-weight: 700;
   line-height: 15px;
-  letter-spacing: 0px;
   text-align: left;
   color: var(--color-background);
   padding: 12.5px 49px 12.5px 50px;
+}
+.question__button:hover {
+  background-color: #e4b7e5;
 }
 /*rectangle section*/
 .rectangle {
@@ -201,6 +208,9 @@ h1 {
   margin-left: 16px;
   position: absolute;
 }
+.rectangle__icon img {
+  margin-top: 0px;
+}
 .menu ul {
   display: flex;
   flex-direction: column;
@@ -210,7 +220,11 @@ h1 {
   font-weight: 400;
   line-height: 27px;
   list-style: none;
-  margin-left: -39px;
+  /*margin-left: -39px;*/
+}
+.menu {
+  margin-top: 150px;
+  margin-left: 13px;
 }
 .menu li {
   padding: 16px;
@@ -218,13 +232,17 @@ h1 {
 .menu a {
   color: var(--color-afterheader);
 }
+
 .social-icon {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  text-align: center;
 }
 .social-icon svg {
   margin: 10px;
+}
+.social-icon svg:hover {
+  fill: var(--color-primary);
 }
 .copyright {
   font-family: 'Poppins', sans-serif;
@@ -234,4 +252,147 @@ h1 {
   color: var(--color-afterheader);
   text-align: center;
   margin-top: 24px;
+}
+/*desktop version with Grid*/
+@media (min-width: 1100px) {
+  .header {
+    height: 741px;
+  }
+  .header__button {
+    width: 200px;
+    height: 48px;
+    font-size: 14px;
+    margin-top: 57px;
+    margin-right: 80px;
+    border-radius: 24px;
+    color: var(--color-gray-blue);
+    padding: 13px 63px 16px 65px;
+  }
+  .header__button:hover {
+    box-shadow: 0px 1px 5px 0px #979797;
+  }
+  .header__logo {
+    width: 200px;
+    height: 31px;
+    margin-top: 57px;
+    margin-left: 80px;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1232px;
+  }
+  .hero__button {
+    margin: 0px;
+  }
+  .hero__button:hover {
+    background-color: #e4b7e5;
+  }
+  .hero__desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 62px;
+  }
+  .hero__paragraph {
+    text-align: left;
+  }
+  .hero__mockups {
+    margin-left: 90px;
+    margin-top: -50px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 776px, 456px;
+    grid-template-rows: 1;
+    max-height: 440px;
+    width: 1232px;
+    margin-left: 104px;
+    margin-right: 104px;
+  }
+  .wrapper__description {
+    grid-column: 1;
+    grid-row: 1 / 2;
+    text-align: left;
+    padding: 151px 161px 150px 120px;
+  }
+  .wrapper__image {
+    grid-column: 2 / 3;
+    margin-right: 16px;
+    max-width: 440px;
+  }
+  .conversation {
+    display: grid;
+    grid-template-columns: 456px, 776px;
+    grid-template-rows: 1;
+  }
+  .conversation img {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    max-width: 440px;
+    max-height: 440px;
+    margin-left: 96px;
+  }
+  .conversation .wrapper__description {
+    grid-column: 2;
+  }
+  .question {
+    max-width: 800px;
+    margin-left: 320px;
+    margin-top: -720px;
+  }
+  .rectangle {
+    display: grid;
+    grid-template-columns: /*379px 212px 262px;*/ repeat(3, 1fr);
+    grid-template-rows: 418px;
+  }
+  .rectangle__icon {
+    max-width: 379px;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .rectangle__icon img {
+    margin-top: 0px;
+  }
+  .menu {
+    margin-top: 0px;
+  }
+  .menu__together {
+    display: flex;
+    flex-direction: row;
+  }
+  .rectangle__desktop {
+    margin-left: 108px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .social-icon {
+    left: 980px;
+    top: 55px;
+  }
+  .menu ul {
+    margin: 56px;
+  }
+  .social-icon__desktop {
+    margin-top: 68px;
+  }
+  .copyright {
+    margin-top: 80px;
+  }
+  .menu__first,
+  .menu__second {
+    line-height: 1;
+  }
+  .menu__first {
+    margin-right: -14px;
+  }
+  .menu__second {
+    margin-left: 105px;
+  }
+  .menu__together a:hover {
+    border-bottom: 3px solid hsl(208, 11%, 55%);
+  }
+  .social-icon__desktop svg {
+    margin-right: 12px;
+  }
 }
